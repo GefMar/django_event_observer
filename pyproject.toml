@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 
 
 [project]
-name = "djnago_event_observer"
+name = "django_event_observer"
 version = "2024.1.0"
 requires-python = "~=3.13"
 description = ""
@@ -22,7 +22,7 @@ inline_quotes = "double"
 format = "wemake"
 
 ignore = [
-    "C", "D", "F", "DAR", "RST", "Q", "I", "S",
+    "C", "D", "E", "F", "DAR", "RST", "Q", "I", "S",
     "WPS110", "WPS123",
     "WPS201", "WPS237",
     "WPS300", "WPS305", "WPS306", "WPS332",
@@ -30,4 +30,5 @@ ignore = [
     "WPS602", "WPS605"]
 
 per-file-ignores = [
-    "__init__.py:WPS347, WPS440",]
+    "__init__.py:WPS347, WPS440",
+    "*/*_enums.py: WPS115, WPS600", ]
