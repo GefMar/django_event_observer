@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel"]
+
 
 [project]
 name = "djnago_event_observer"
@@ -8,6 +8,8 @@ version = "2024.1.0"
 requires-python = "~=3.13"
 description = ""
 readme = "README.md"
+dependencies = ["django>=4.1", ]
+
 authors = [{ name = "Sergei (Gefest) Romanchuk", email = "pod.cargoes.0u@icloud.com" }]
 
 license = { file = "LICENSE" }

@@ -35,4 +35,3 @@ force-wrap-aliases = true
 force-sort-within-sections = true
 combine-as-imports = true
 lines-after-imports = 2
-required-imports = ["from __future__ import annotations"]
