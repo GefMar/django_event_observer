@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "djnago_event_observer"
+version = "2024.1.0"
+requires-python = "~=3.13"
+description = ""
+readme = "README.md"
+authors = [{ name = "Sergei (Gefest) Romanchuk", email = "pod.cargoes.0u@icloud.com" }]
+
+license = { file = "LICENSE" }
+urls = { homepage = "https://github.com/GefMar/djnago_event_observer" }
+classifiers = ["License :: OSI Approved :: MIT License"]
+
+[tool.flake8]
+max-line-length = 120
+inline_quotes = "double"
+format = "wemake"
+
+ignore = [
+    "C", "D", "F", "DAR", "RST", "Q", "I", "S",
+    "WPS110", "WPS123",
+    "WPS201", "WPS237",
+    "WPS300", "WPS305", "WPS306", "WPS332",
+    "WPS410", "WPS412", "WPS430",
+    "WPS602", "WPS605"]
+
+per-file-ignores = [
+    "__init__.py:WPS347, WPS440",]
