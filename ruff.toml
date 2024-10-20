@@ -1,10 +1,9 @@
-ignore-init-module-imports = true
+line-length = 120
 output-format = "grouped"
 target-version = "py313"
 
 [lint]
 select = ["ALL"]
-line-length = 120
 fixable = ["ALL"]
 ignore = [
     'ANN002', 'ANN003', 'ANN101',
