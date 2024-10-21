@@ -26,12 +26,13 @@ class DjangoEventObserverConfig(AppConfig):
             raise ValueError(msg)
         return self._event_manager
 
-    def load_event_manager(self) -> EventManager:
+    def load_event_manager(self):
         event_manager_class = import_string(self.app_settings["EVENT_MANAGER"])
         if not issubclass(event_manager_class, EventManager):
             msg = f"{event_manager_class} is not a subclass of EventManager"
             raise TypeError(msg)
-        return event_manager_class()
+        if self._event_manager is None:
+            self._event_manager = event_manager_class()  # noqa: WPS601
 
     def ready(self):
         self.load_event_manager()
