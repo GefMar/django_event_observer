@@ -13,7 +13,7 @@ dependencies = ["django>=4.1", ]
 authors = [{ name = "Sergei (Gefest) Romanchuk", email = "pod.cargoes.0u@icloud.com" }]
 
 license = { file = "LICENSE" }
-urls = { homepage = "https://github.com/GefMar/djaтgo_event_observer" }
+urls = { homepage = "https://github.com/GefMar/django_event_observer" }
 classifiers = ["License :: OSI Approved :: MIT License"]
 
 [tool.flake8]

@@ -1,4 +1,4 @@
-# djnago_event_observer
+# django_event_observer
 
 
 django_event_observer is a fully-fledged Django application designed for observing and handling events within your project. It provides a flexible and extensible framework for subscribing to various event types and reacting to them accordingly.
