@@ -1,13 +1,17 @@
+from __future__ import annotations
+
+
 __all__ = ("EventManager",)
+
 
 from collections import defaultdict
 import typing
 
-from .events.base import BaseEvent
+from .events.base import BaseEvent  # noqa: TCH001
 from .observers.abstract import BaseAbstractObserver
 
 
-_ObserversT = dict[str, list[BaseAbstractObserver]]
+_ObserversT = typing.Dict[str, typing.List[BaseAbstractObserver]]  # noqa: UP006
 
 
 class EventManager:

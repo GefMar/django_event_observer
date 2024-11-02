@@ -1,5 +1,14 @@
 __all__ = ("ModelSignalEventEnum",)
-from enum import StrEnum
+
+# flake8: noqa
+
+try:
+    from enum import StrEnum
+except ImportError:
+    from enum import Enum
+
+    class StrEnum(str, Enum):  # type: ignore
+        pass
 
 
 class ModelSignalEventEnum(StrEnum):
