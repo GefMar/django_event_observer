@@ -1,9 +1,12 @@
+from __future__ import annotations
+
+
 __all__ = ("BaseModelSignalEvent",)
 
 from django.db import models
 
 from ..base import BaseEvent
-from .model_event_enums import ModelSignalEventEnum
+from .model_event_enums import ModelSignalEventEnum  # noqa: TCH001
 
 
 class BaseModelSignalEvent(BaseEvent[models.Model]):

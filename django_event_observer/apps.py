@@ -1,3 +1,7 @@
+from __future__ import annotations
+
+import typing
+
 from django.apps import AppConfig
 from django.conf import settings
 from django.utils.module_loading import import_string
@@ -8,7 +12,7 @@ from .observers.abstract import BaseAbstractObserver
 
 
 class DjangoEventObserverConfig(AppConfig):
-    _event_manager: EventManager | None = None
+    _event_manager: typing.Optional[EventManager] = None  # noqa: UP007
     default_auto_field = "django.db.models.BigAutoField"
     name = "django_event_observer"
 
