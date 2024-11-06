@@ -3,6 +3,7 @@ from __future__ import annotations
 
 __all__ = ("BaseEvent",)
 
+
 from datetime import datetime, timezone
 import typing
 from uuid import uuid4
