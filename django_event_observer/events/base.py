@@ -3,7 +3,9 @@ from __future__ import annotations
 
 __all__ = ("BaseEvent",)
 
+from datetime import UTC, datetime
 import typing
+from uuid import uuid4
 
 from django.apps import apps
 
@@ -17,6 +19,8 @@ _EventDataT = typing.TypeVar("_EventDataT")
 
 class BaseEvent(typing.Generic[_EventDataT]):
     def __init__(self, event_type: str, event_data: _EventDataT):
+        self.event_timestamp: float = datetime.now(tz=UTC).timestamp()
+        self.event_id: str = str(uuid4())
         self._event_manager: EventManager = apps.get_app_config("django_event_observer").event_manager
         self.event_type = event_type
         self.event_data = event_data
