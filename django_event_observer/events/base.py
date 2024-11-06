@@ -3,7 +3,8 @@ from __future__ import annotations
 
 __all__ = ("BaseEvent",)
 
-from datetime import UTC, datetime
+
+from datetime import datetime, timezone
 import typing
 from uuid import uuid4
 
@@ -19,7 +20,7 @@ _EventDataT = typing.TypeVar("_EventDataT")
 
 class BaseEvent(typing.Generic[_EventDataT]):
     def __init__(self, event_type: str, event_data: _EventDataT):
-        self.event_timestamp: float = datetime.now(tz=UTC).timestamp()
+        self.event_timestamp: float = datetime.now(tz=timezone.utc).timestamp()  # noqa: UP017
         self.event_id: str = str(uuid4())
         self._event_manager: EventManager = apps.get_app_config("django_event_observer").event_manager
         self.event_type = event_type
