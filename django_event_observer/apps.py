@@ -19,7 +19,7 @@ class DjangoEventObserverConfig(AppConfig):
     @property
     def app_settings(self):
         result = default_config.DJANGO_EVENT_OBSERVER.copy()
-        if isinstance(getattr(settings, "DJANGO_EVENT_OBSERVER", None), dict):
+        if getattr(settings, "DJANGO_EVENT_OBSERVER", None) is not None:
             result.update(settings.DJANGO_EVENT_OBSERVER)
         return result
 
